@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Real-Time Weather</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Advanced Particle Canvas for Real Rain/Snow -->
+    <canvas id="weather-canvas"></canvas>
+    <div id="thunder-flash"></div>
+    <div id="condition-watermark">WEATHER</div>
+
+    <div class="container">
+        <!-- 3D Tilt Box -->
+        <div class="weather-box" id="tilt-box">
+            <div class="header">
+                <button id="homeBtn" title="Back to Home">
+                    <i class="fa-solid fa-house"></i>
+                </button>
+                <div class="search-box">
+                    <i class="fa-solid fa-location-dot location-icon"></i>
+                    <input type="text" id="cityInput" placeholder="Enter city name...">
+                    <button id="searchBtn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="not-found">
+                <img src="https://cdn-icons-png.flaticon.com/512/4363/4363670.png" alt="Not Found">
+                <p>Location not found in real-time database.</p>
+            </div>
+
+            <div class="weather-details" style="display: none;">
+                <div class="main-info">
+                    <div class="weather-icon"><i id="weatherIcon" class="fa-solid fa-cloud"></i></div>
+                    <div class="temp-section">
+                        <div class="temperature"><span id="temp">0</span><span class="deg">°C</span></div>
+                        <div class="description" id="desc">Analyzing...</div>
+                    </div>
+                </div>
+
+                <!-- Upgraded 8-Grid Advanced Feature -->
+                <div class="advanced-info">
+                    <div class="info-card">
+                        <i class="fa-solid fa-temperature-half" style="color: #ff7675;"></i>
+                        <div><span id="feelsLike">0°C</span><p>Feels Like</p></div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-droplet" style="color: #74b9ff;"></i>
+                        <div><span id="humidity">0%</span><p>Humidity</p></div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-wind" style="color: #81ecec;"></i>
+                        <div><span id="wind">0 km/h</span><p>Wind</p></div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-sun" style="color: #fdcb6e;"></i>
+                        <div><span id="uvIndex">0</span><p>UV Index</p></div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-eye" style="color: #a29bfe;"></i>
+                        <div><span id="visibility">0 km</span><p>Visibility</p></div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-gauge-high" style="color: #55efc4;"></i>
+                        <div><span id="pressure">0 hPa</span><p>Pressure</p></div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-up-long" style="color: #fab1a0;"></i>
+                        <div><span id="sunrise">00:00</span><p>Sunrise</p></div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-down-long" style="color: #e17055;"></i>
+                        <div><span id="sunset">00:00</span><p>Sunset</p></div>
+                    </div>
+                </div>
+
+                <!-- 7-Day Ultimate Forecast -->
+                <div class="forecast-container">
+                    <h3>7-Day Ultimate Forecast</h3>
+                    <div class="forecast-grid" id="forecastGrid">
+                        <!-- Forecast items will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
